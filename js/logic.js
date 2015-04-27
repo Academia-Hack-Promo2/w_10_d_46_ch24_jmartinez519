@@ -103,31 +103,31 @@ var play = function(board, currentPlayer, symbol){
     if (checkPlay(board, xInt ,yInt)){
       switch (coord) {
         case '00':
-          document.getElementById('r1').innerHTML = "<img src=\"img/chappie.png\">";
+          document.getElementById('r1').innerHTML = symbol;
           break;
         case '01':
-          document.getElementById('r4').innerHTML = "<img src=\"img/chappie.png\">";
+          document.getElementById('r4').innerHTML = symbol;
           break;
         case '02':
-          document.getElementById('r7').innerHTML = "<img src=\"img/chappie.png\">";
+          document.getElementById('r7').innerHTML = symbol;
           break;
         case '10':
-          document.getElementById('r2').innerHTML = "<img src=\"img/chappie.png\">";
+          document.getElementById('r2').innerHTML = symbol;
           break;
         case '11':
-          document.getElementById('r5').innerHTML = "<img src=\"img/chappie.png\">";
+          document.getElementById('r5').innerHTML = symbol;
           break;
         case '12':
-          document.getElementById('r8').innerHTML = "<img src=\"img/chappie.png\">";
+          document.getElementById('r8').innerHTML = symbol;
           break;
         case '20':
-          document.getElementById('r3').innerHTML = "<img src=\"img/chappie.png\">";
+          document.getElementById('r3').innerHTML = symbol;
           break;
         case '21':
-          document.getElementById('r6').innerHTML = "<img src=\"img/chappie.png\">";
+          document.getElementById('r6').innerHTML = symbol;
           break;
         case '22':
-          document.getElementById('r9').innerHTML = "<img src=\"img/chappie.png\">";
+          document.getElementById('r9').innerHTML = symbol;
           break;
       }
       board[xInt][yInt] = symbol;
@@ -145,39 +145,39 @@ var play = function(board, currentPlayer, symbol){
     if (checkPlay(board, xInt ,yInt)){
       switch (coord) {
         case '00':
-          document.getElementById('r1').innerHTML = "<img src=\"img/jamm.png\">";
+          document.getElementById('r1').innerHTML = symbol;
 
           break;
         case '01':
-          document.getElementById('r4').innerHTML = "<img src=\"img/jamm.png\">";
+          document.getElementById('r4').innerHTML = symbol;
 
           break;
         case '02':
-          document.getElementById('r7').innerHTML = "<img src=\"img/jamm.png\">";
+          document.getElementById('r7').innerHTML = symbol;
 
           break;
         case '10':
-          document.getElementById('r2').innerHTML = "<img src=\"img/jamm.png\">";
+          document.getElementById('r2').innerHTML = symbol;
 
           break;
         case '11':
-          document.getElementById('r5').innerHTML = "<img src=\"img/jamm.png\">";
+          document.getElementById('r5').innerHTML = symbol;
 
           break;
         case '12':
-          document.getElementById('r8').innerHTML = "<img src=\"img/jamm.png\">";
+          document.getElementById('r8').innerHTML = symbol;
 
           break;
         case '20':
-          document.getElementById('r3').innerHTML = "<img src=\"img/jamm.png\">";
+          document.getElementById('r3').innerHTML = symbol;
 
           break;
         case '21':
-          document.getElementById('r6').innerHTML = "<img src=\"img/jamm.png\">";
+          document.getElementById('r6').innerHTML = symbol;
 
           break;
         case '22':
-          document.getElementById('r9').innerHTML = "<img src=\"img/jamm.png\">";
+          document.getElementById('r9').innerHTMLsymbol;
 
           break;
       }
