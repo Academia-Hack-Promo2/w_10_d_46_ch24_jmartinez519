@@ -8,27 +8,43 @@
 </head>
 <body>
   <div class="container">
-    <div class="row text-center">
-      <div class="col-md-3 col-md-offset-4">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>La vieja JS</h1>
+        <p>Juego entre dos jugadores: O y X, que marcan los espacios de un tablero de 3×3 alternadamente. Un jugador gana si consigue tener una línea de tres de sus símbolos: la línea puede ser horizontal, vertical o diagonal.<p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 text-center">
 
         <div id="columna_1">
-          <div id="01"class="recuadro" data-x="0" data-y="1"></div>
-          <div class="recuadro"></div>
-          <div class="recuadro"></div>
+          <div class="recuadro" id="r1"></div>
+          <div class="recuadro" id="r2"></div>
+          <div class="recuadro" id="r3"></div>
         </div>
 
         <div id="columna_2">
-          <div class="recuadro"></div>
-          <div class="recuadro"></div>
-          <div class="recuadro"></div>
+          <div class="recuadro" id="r4"></div>
+          <div class="recuadro" id="r5"></div>
+          <div class="recuadro" id="r6"></div>
         </div>
 
         <div id="columna_3">
-          <div class="recuadro"></div>
-          <div class="recuadro"></div>
-          <div class="recuadro"></div>
+          <div class="recuadro" id="r7"></div>
+          <div class="recuadro" id="r8"></div>
+          <div class="recuadro" id="r9"></div>
         </div>
 
+      </div>
+      <div class="com-md-6 text-center">
+
+        <button type="button" onclick="main()" class="btn btn-primary btn-lg">Nuevo Juego</button>
+
+        <br>
+        <br>
+
+        <h3 id="player"></h3>
+        
       </div>
     </div>
   </div>

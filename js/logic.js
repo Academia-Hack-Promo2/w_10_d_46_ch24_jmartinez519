@@ -1,5 +1,30 @@
 var printBoard = function(board){
-  console.log(board);
+  // console.log(board);
+  var i;
+  var j;
+  var line = i+1
+  console.log("   0  1  2")
+  for (i = 0; i < 3; i++){
+      var line = i
+      console.log(line)
+    for (j = 0; j < 3; j++){
+      line += board[i][j]
+    }
+    console.log(line)
+  }
+};
+
+var cleanBoard = function(){
+
+  document.getElementById('r1').innerHTML = " ";
+  document.getElementById('r4').innerHTML = " ";
+  document.getElementById('r7').innerHTML = " ";
+  document.getElementById('r2').innerHTML = " ";
+  document.getElementById('r5').innerHTML = " ";
+  document.getElementById('r8').innerHTML = " ";
+  document.getElementById('r3').innerHTML = " ";
+  document.getElementById('r6').innerHTML = " ";
+  document.getElementById('r9').innerHTML = " ";
 };
 
 var initBoard = function(){
@@ -16,7 +41,6 @@ var initBoard = function(){
 };
 
 var game = function(board, userName, computerName){
-  var winner;
   while (true){
     winner = turn(board, userName, "X");
     if (winner === null){
@@ -75,8 +99,41 @@ var play = function(board, currentPlayer, symbol){
   if (currentPlayer === "Chappie"){
     var xInt = Math.floor(Math.random() * (3 - 0));
     var yInt = Math.floor(Math.random() * (3 - 0));
+    var coord = String(xInt) + String(yInt);
     if (checkPlay(board, xInt ,yInt)){
+      switch (coord) {
+        case '00':
+          document.getElementById('r1').innerHTML = "<img src=\"img/chappie.png\">";
+          break;
+        case '01':
+          document.getElementById('r4').innerHTML = "<img src=\"img/chappie.png\">";
+          break;
+        case '02':
+          document.getElementById('r7').innerHTML = "<img src=\"img/chappie.png\">";
+          break;
+        case '10':
+          document.getElementById('r2').innerHTML = "<img src=\"img/chappie.png\">";
+          break;
+        case '11':
+          document.getElementById('r5').innerHTML = "<img src=\"img/chappie.png\">";
+          break;
+        case '12':
+          document.getElementById('r8').innerHTML = "<img src=\"img/chappie.png\">";
+          break;
+        case '20':
+          document.getElementById('r3').innerHTML = "<img src=\"img/chappie.png\">";
+          break;
+        case '21':
+          document.getElementById('r6').innerHTML = "<img src=\"img/chappie.png\">";
+          break;
+        case '22':
+          document.getElementById('r9').innerHTML = "<img src=\"img/chappie.png\">";
+          break;
+      }
       board[xInt][yInt] = symbol;
+
+    }else{
+      play(board, currentPlayer, symbol)
     }
 
   }else{
@@ -84,8 +141,50 @@ var play = function(board, currentPlayer, symbol){
     var y = prompt("Ingresa la columna:");
     var xInt = Number(x);
     var yInt = Number(y);
+    var coord = String(xInt) + String(yInt);
     if (checkPlay(board, xInt ,yInt)){
+      switch (coord) {
+        case '00':
+          document.getElementById('r1').innerHTML = "<img src=\"img/jamm.png\">";
+
+          break;
+        case '01':
+          document.getElementById('r4').innerHTML = "<img src=\"img/jamm.png\">";
+
+          break;
+        case '02':
+          document.getElementById('r7').innerHTML = "<img src=\"img/jamm.png\">";
+
+          break;
+        case '10':
+          document.getElementById('r2').innerHTML = "<img src=\"img/jamm.png\">";
+
+          break;
+        case '11':
+          document.getElementById('r5').innerHTML = "<img src=\"img/jamm.png\">";
+
+          break;
+        case '12':
+          document.getElementById('r8').innerHTML = "<img src=\"img/jamm.png\">";
+
+          break;
+        case '20':
+          document.getElementById('r3').innerHTML = "<img src=\"img/jamm.png\">";
+
+          break;
+        case '21':
+          document.getElementById('r6').innerHTML = "<img src=\"img/jamm.png\">";
+
+          break;
+        case '22':
+          document.getElementById('r9').innerHTML = "<img src=\"img/jamm.png\">";
+
+          break;
+      }
       board[xInt][yInt] = symbol;
+    }else{
+      alert("Posicion Ocupada")
+      play(board, currentPlayer, symbol)
     }
   }
   console.log(currentPlayer, xInt, yInt)
@@ -117,12 +216,13 @@ var check_y = function(yInt){
   }
 };
 
-var main = function(){
 
-  var userName = prompt("Escriba su nombre");
+var main = function(){
+  cleanBoard()
+  var userName = "Jonathan";
   var computerName = "Chappie";
   var board = initBoard();
   var winner = game(board, userName, computerName);
   alert("El ganador es: " + winner);
 
-}();
+};

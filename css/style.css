@@ -1,20 +1,20 @@
 .recuadro {
   position: relative;
-  width: 50px;
-  height: 50px;
-  background-color: #C0C0C0;
+  width: 60px;
+  height: 60px;
+  background-color: #CC6633;
   margin-bottom: 10px;
 }
 
 #columna_2{
   top: 0;
-  left: 70px;
+  left: 100px;
   position: absolute;
 
 }
 #columna_3{
   top: 0;
-  left: 130px;
+  left: 185px;
   position: absolute;
   
 }
