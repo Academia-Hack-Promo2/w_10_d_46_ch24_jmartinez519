@@ -1,7 +1,8 @@
 //Limpia el tablero para el nuevo juego
 
 var cleanBoard = function(){
-
+  document.getElementById('winner').innerHTML = " ";
+  document.getElementById('winnerText').innerHTML = " ";
   document.getElementById('r1').innerHTML = " ";
   document.getElementById('r4').innerHTML = " ";
   document.getElementById('r7').innerHTML = " ";
@@ -69,6 +70,7 @@ var checkFull = function(board){
 
 var play = function(board, currentPlayer, symbol){
   alert("Haz tu jugada " + currentPlayer);
+  document.getElementById('alertOcupado').innerHTML = " ";
   if (currentPlayer === "Chappie"){
     var xInt = Math.floor(Math.random() * (3 - 0));
     var yInt = Math.floor(Math.random() * (3 - 0));
@@ -106,6 +108,7 @@ var play = function(board, currentPlayer, symbol){
       board[xInt][yInt] = symbol;
 
     }else{
+      document.getElementById('alertOcupado').innerHTML = "Chappie esta nervioso y se equivoco";
       play(board, currentPlayer, symbol)
     }
 
@@ -156,7 +159,7 @@ var play = function(board, currentPlayer, symbol){
       }
       board[xInt][yInt] = symbol;
     }else{
-      alert("Posicion Ocupada")
+      document.getElementById('alertOcupado').innerHTML = "Posición ocupada";
       play(board, currentPlayer, symbol)
     }
   }
@@ -195,6 +198,15 @@ var main = function(){
   var computerName = "Chappie";
   var board = [["[ ]","[ ]","[ ]"],["[ ]","[ ]","[ ]"],["[ ]","[ ]","[ ]"]];
   var winner = game(board, userName, computerName);
-  alert("El ganador es: " + winner);
+  if (winner === userName){
+    document.getElementById("winnerText").innerHTML = "El ganador es: Jonathan";
+    document.getElementById("winner").innerHTML = "<img src=\"img/jamm.gif\">";
+  }else if (winner === computerName){
+    document.getElementById("winnerText").innerHTML = "El ganador es: Chappie";
+    document.getElementById("winner").innerHTML = "<img src=\"img/chappiehappy.gif\">";
+  }else{
+    document.getElementById("winnerText").innerHTML = "El ganador es: La Vieja";
+    document.getElementById("winner").innerHTML = "<img src=\"img/vieja.gif\">";
+  }
 
 };
