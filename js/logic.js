@@ -1,18 +1,4 @@
-var printBoard = function(board){
-  // console.log(board);
-  var i;
-  var j;
-  var line = i+1
-  console.log("   0  1  2")
-  for (i = 0; i < 3; i++){
-      var line = i
-      console.log(line)
-    for (j = 0; j < 3; j++){
-      line += board[i][j]
-    }
-    console.log(line)
-  }
-};
+//Limpia el tablero para el nuevo juego
 
 var cleanBoard = function(){
 
@@ -27,18 +13,6 @@ var cleanBoard = function(){
   document.getElementById('r9').innerHTML = " ";
 };
 
-var initBoard = function(){
-  var board = [];
-  var i;
-  var j;
-  for (i = 0; i < 3; i++){
-    board.push([]);
-    for (j = 0; j < 3; j++){
-      board[i][j] = "[ ]";
-    }
-  }
-  return board;
-};
 
 var game = function(board, userName, computerName){
   while (true){
@@ -56,7 +30,6 @@ var game = function(board, userName, computerName){
 };
 
 var turn = function(board, currentPlayer, symbol){
-  printBoard(board);
   board = play(board ,currentPlayer, symbol);
   var winner = checkWinner(board, currentPlayer); 
   return winner;
@@ -75,7 +48,7 @@ var checkWinner = function(board, currentPlayer){
 
   }else{
     if (checkFull(board)){
-      return "Vieja";
+      return " La Vieja";
     }
   }
   return null;
@@ -177,7 +150,7 @@ var play = function(board, currentPlayer, symbol){
 
           break;
         case '22':
-          document.getElementById('r9').innerHTMLsymbol;
+          document.getElementById('r9').innerHTML = symbol;
 
           break;
       }
@@ -187,7 +160,6 @@ var play = function(board, currentPlayer, symbol){
       play(board, currentPlayer, symbol)
     }
   }
-  console.log(currentPlayer, xInt, yInt)
   return board;
 };
 
@@ -221,7 +193,7 @@ var main = function(){
   cleanBoard()
   var userName = "Jonathan";
   var computerName = "Chappie";
-  var board = initBoard();
+  var board = [["[ ]","[ ]","[ ]"],["[ ]","[ ]","[ ]"],["[ ]","[ ]","[ ]"]];
   var winner = game(board, userName, computerName);
   alert("El ganador es: " + winner);
 
